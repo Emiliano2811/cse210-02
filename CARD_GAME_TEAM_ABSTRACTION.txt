@@ -1,0 +1,124 @@
+﻿CARD GAME TEAM PROJECT 
+Group Members : Emiliano Torres, Brandon Cubides, Emily Case, Nathan Rolim, Nefi Melgar 
+GitHub repository:  https://github.com/Emiliano2811/cse210-02
+
+
+Abstraction  
+Establishes a connection between abstraction and program design choices. Provides examples from notes, diagrams or other design materials.
+
+
+Object: Player
+Responsibility: 
+-To let the player know if he wins or loses. Makes the random decision on to score points
+
+
+Behaviors:                                                                    
+-Decide Higher points
+-Decide Low (substract) points
+
+
+State: 
+-Win game & Lost game
+	
+
+
+
+Object: Cards
+Responsibility: 
+-The user will choose from the cards randomly
+
+
+Behaviours: 
+-Decide if the card will have a lower or a higher number
+-Set a random number
+
+
+State: 
+-Display score is lower or higher 
+	
+
+
+
+Object: Score
+Responsibility: 
+-The user will have the random number displayed and the game will sum or subtract points
+
+
+Behaviour:
+-The user will have a score displayed. The score will sum or subtract if He hits 0 score, will lose 
+
+
+State: 
+-Display sum or subtract score 
+	
+
+
+
+Object: Play Again
+Responsibility: 
+-The user will have to make the decision to play again if points do not equal zero
+
+
+Behaviour: 
+The game point is not to hit 0 score, user will lose and can decide to play again 
+
+
+State: 
+-Keep playing if not, exit
+	
+
+
+
+
+
+
+
+Class: Card_Game
+	Player_decision: 
+Card_random: 
+Set_score: 
+Play_Again:
+	Functions to code 
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Relationship
+
+
+
+
+Game
+	Start the game 
+	Display Card
+	random number 
+	Player Guess
+	
+
+	Compare
+	player guess vs random number card 
+	
+
+THIS DOCUMENT WILL BE IN CONSTANT UPDATE
