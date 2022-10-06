@@ -58,27 +58,65 @@ def game_points():
 
 
 
-def individual_cards(): 
+def start_game():
+    individual_cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
     start_number = random.choice(individual_cards)
-    print(f"The card is {start_number}")
-    #need to run and try it
-    random_card = random.choice(individual_cards)
+    return start_number 
+    
+    
 
-    higher_or_lower = str(input("Higher or Lower? [h/l] "))
-    if higher_or_lower == "l" and start_number > random_card:
-        user_score += 100
 
-    elif higher_or_lower == "h" and start_number < random_card: 
-        user_score +100
+def individual_cards():
+    user_score = 300
+    individual_cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    while True:
+        random_card = random.choice(individual_cards)
 
-    elif higher_or_lower =="l" and start_number < random_card: 
-        user_score -= 75
+        old_random_card = 0 
+        if old_random_card > 0:
+            print(f"The card is: {old_random_card}") 
+            higher_or_lower = str(input("Higher or Lower? [h/l] "))
+            start_number = old_random_card 
+        elif old_random_card == 0:
+            start_number = start_game()
+            print(f"The card is: {start_game()}")
+            higher_or_lower = str(input("Higher or Lower? [h/l] "))
+            
 
-    elif higher_or_lower == "h" and start_number > random_card: 
-        user_score -= 75 
-        
-    else: 
-        pass
+        if higher_or_lower == "l" and start_number > random_card:
+            user_score = user_score+100
+            print(f"Your score: {user_score}")
+            print(f"The card number is:{random_card}")
+            random_card = old_random_card 
+            return old_random_card 
+            
+        elif higher_or_lower == "h" and start_number < random_card:
+            user_score = user_score+100
+            print(f"Your score: {user_score}")
+            print(f"The card number is:{random_card}")
+            random_card = old_random_card 
+            return old_random_card 
+            
+        elif higher_or_lower == "l" and start_number < random_card:
+            user_score = user_score-75
+            print(f"Your score: {user_score}")
+            print(f"The card number is:{random_card}")
+            random_card = old_random_card 
+            return old_random_card 
+            
+        elif higher_or_lower == "h" and start_number > random_card:
+            user_score = user_score-75
+            print(f"Your score: {user_score}")
+            print(f"The card number is:{random_card}")
+            random_card = old_random_card 
+            return old_random_card 
+            
+        else:
+            break
+
+
+
+individual_cards()
 
 # def higher_or_lower():
 #     if random_card == 
