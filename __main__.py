@@ -1,7 +1,10 @@
-# from game.director import Director
+from game.director import Director
+from random import random
 
-# director = Director()
-# director.start_game()
+director = Director()
+director.start_game()
+
+
 
 # from colorama import init, Fore
 # import random
