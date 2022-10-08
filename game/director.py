@@ -4,6 +4,7 @@ from game.card import Card
 class Director:
     def __init__(self):
         self.score = 0
+        self.total_score = 0
         self.guess_score = 100
         self.failed_Score = 75
         self.run_game = True
@@ -11,6 +12,8 @@ class Director:
     def start_game(self):
         """Start the game, it will run the loop to play
         """
+        score = self.score
+        total_score = 300
         while self.run_game:
             self.game_interface()
             keep_playing = self.play_again()
@@ -21,12 +24,12 @@ class Director:
 
     def game_interface(self):
         """This will show the interface and information of the game"""
-        total_score = self.score
-        card = Card()
-        card_value = card.random_card()
+        total_score = 300
 
         print("\nLet's play!")
         print("")
+        card = Card()
+        card_value = card.random_card()
         print(f"The card is: {card_value}")
 
         # the user will guess if higher or lower for the next card
@@ -38,13 +41,13 @@ class Director:
 
         # sum or subtract points if guessed or not
         if next_card_value > card_value and guess == "h":
-            total_score += 100
+            total_score += self.guess_score
         elif next_card_value > card_value and guess == "l":
-            total_score -= 75
+            total_score -= self.failed_Score
         elif next_card_value < card_value and guess == "l":
-            total_score += 100
+            total_score += self.guess_score
         elif next_card_value < card_value and guess == "h":
-            total_score = total_score - 75
+            total_score -= self.failed_Score
         final_score = total_score
         print(f"Your score is: {final_score}")
 
