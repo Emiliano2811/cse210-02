@@ -2,14 +2,8 @@
 
 <h3>Introduction</h3>
 <hr>
-<p>This is a game created for BYU-I course CSE 210, Programming with classes. <br>
-Principles of object oriented programming will be applied through the program.</p>
-<h5>Authors</h5>
-<ul>
-  <li>Emiliano</li>
-  <li>Brandon</li>
-  <li>Nefi</li>
-</ul>
+<p>Do you feel lucky? Do you think you can guess if the next card will be higher or lower? <br>
+Let's show your skills with Hilo game.</p>
 
 <h3>Game's Overview</h3>
 <hr>
