@@ -4,12 +4,12 @@
 <hr>
 <p>This respository was created for BYU-I course CSE 210, Programming with classes. <br>
 Principles of object oriented programming will be applied through the projects.</p>
-<h5>Authors</h5>
-<ul>
-  <li>Emiliano</li>
-  <li>Brandon</li>
-  <li>Nefi</li>
-</ul>
+
+## Authors
+---
+* Emiliano Becerril ()
+* Brandon Cubides ()
+* Nefi Melgar (mel16013@byui.edu)
 
 <h3>Projects:</h3>
 <hr>
