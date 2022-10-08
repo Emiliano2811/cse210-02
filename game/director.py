@@ -3,40 +3,59 @@ from game.card import Card
 
 class Director:
     def __init__(self):
-        self.score = 300
+        self.score = 0
+        self.guess_score = 100
+        self.failed_Score = 75
         self.run_game = True
 
     def start_game(self):
         """Start the game, it will run the loop to play
         """
-        start_game = int(input("\nPlease enter 1 to play or 2 to exit: "))
+        while self.run_game:
+            self.game_interface()
+            keep_playing = self.play_again()
+            if keep_playing == True:
+                self.run_game = True
+            elif keep_playing == False:
+                self.run_game = False
 
-        self.run_game
-        if start_game == 1:
-            while run == True:
-                self.game_interface(self)
-                keep_playing = self.play_again(self)
-                if keep_playing == True:
-                    run = True
-                elif keep_playing == False:
-                    run = False
+    def game_interface(self):
+        """This will show the interface and information of the game"""
+        total_score = self.score
+        card = Card()
+        card_value = card.random_card()
 
-        elif start_game == 2:
-            print("\nSee you next time")
+        print("\nLet's play!")
+        print("")
+        print(f"The card is: {card_value}")
 
-    # def game_interface(self):
-    #     print("\nLet's play!")
-    #     print("")
-    #     print("The card is: ")
-    #     #random_decision = input(print("Higher or Lower? [h/l] "))
-    #     print("Next card was: ")
-    #     print("Your score is: ")
+        # the user will guess if higher or lower for the next card
+        guess = self.higher_or_lower()
 
-    # def play_again(self):
-    #     play_again = input("\nPlay again? ")
-    #     if play_again.lower() == "y":
-    #         return True
-    #     elif play_again.lower() == "n":
-    #         return False
-    #
-    
+        # next card will be created
+        next_card_value = card.random_card()
+        print(f"Next card was: {next_card_value}")
+
+        # sum or subtract points if guessed or not
+        if next_card_value > card_value and guess == "h":
+            total_score += 100
+        elif next_card_value > card_value and guess == "l":
+            total_score -= 75
+        elif next_card_value < card_value and guess == "l":
+            total_score += 100
+        elif next_card_value < card_value and guess == "h":
+            total_score = total_score - 75
+        final_score = total_score
+        print(f"Your score is: {final_score}")
+
+    def higher_or_lower(self):
+        guess = input("Higher or lower? [h/l] ")
+        return guess
+
+    def play_again(self):
+        """This will ask the player to play again or quit"""
+        play_again = input("Play again? ")
+        if play_again.lower() == "y":
+            return True
+        elif play_again.lower() == "n":
+            return False
