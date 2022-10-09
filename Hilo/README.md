@@ -38,6 +38,6 @@ root                    (project root folder)
 
 ## Authors
 ---
-* Emiliano Becerril ()
+* Emiliano Becerril (bec22002@byui.edu)
 * Brandon Cubides ()
 * Nefi Melgar (mel16013@byui.edu)
